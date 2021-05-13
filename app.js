@@ -4,6 +4,7 @@ class gsapAnimation {
     this.nav = document.querySelector(".nav-header");
     this.cursor = document.querySelector(".cursor");
     this.mouseText = this.cursor.querySelector("span");
+    this.burger = document.querySelector(".burger");
     this.slideAnimation(this.slides);
     this.addListeners();
   }
@@ -65,6 +66,7 @@ class gsapAnimation {
   addListeners = () => {
     window.addEventListener("mousemove", this.addCursor);
     window.addEventListener("mouseover", this.mouseHover);
+    this.burger.addEventListener("click", this.navToggle);
   };
 
   addCursor = (e) => {
@@ -79,12 +81,32 @@ class gsapAnimation {
     } else {
       this.cursor.classList.remove("nav-active");
     }
-    if(item.classList.contains("explore")) {
+    if (item.classList.contains("explore")) {
       this.cursor.classList.add("explore-active");
       this.mouseText.innerText = "Tap";
+      gsap.to(".title-swipe", 1, { y: "0%" });
     } else {
       this.cursor.classList.remove("explore-active");
       this.mouseText.innerText = "";
+      gsap.to(".title-swipe", 1, { y: "100%" });
+    }
+  };
+
+  navToggle = (e) => {
+    if (!e.target.classList.contains("active")) {
+      e.target.classList.add("active");
+      gsap.to(".line1", 0.5, { rotate: "45", y: 5, background: "black" });
+      gsap.to(".line2", 0.5, { rotate: "-45", y: -5, background: "black" });
+      gsap.to(".nav-bar", 1, { clipPath: "circle(2500px at 100% -10%)" });
+      gsap.to("#logo", 1, { color: "black" });
+      document.body.classList.add("hide");
+    } else {
+      e.target.classList.remove("active");
+      gsap.to(".line1", 0.5, { rotate: "0", y: 0, background: "white" });
+      gsap.to(".line2", 0.5, { rotate: "0", y: 0, background: "white" });
+      gsap.to(".nav-bar", 1, { clipPath: "circle(50px at 100% -10%)" });
+      gsap.to("#logo", 1, { color: "white" });
+      document.body.classList.remove("hide");
     }
   };
 }

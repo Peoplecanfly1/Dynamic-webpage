@@ -1,3 +1,66 @@
+.fashion1, .fashion2, .fashion3 {
+  min-height: 90vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: auto;
+  color: white;
+  margin-top: 5rem;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.fashion1 p, .fashion2 p, .fashion3 p {
+  font-size: 2rem;
+  padding: 2rem 2rem 0rem 0rem;
+  margin-bottom: 10rem;
+}
+
+.fashion-nr {
+  font-size: 15rem;
+  position: absolute;
+  left: 45%;
+  bottom: 10%;
+  color: white;
+  opacity: 0.4;
+}
+
+.fashion1 h1 {
+  color: #ff8b5d;
+}
+
+.fashion2 h1 {
+  color: #a76ee7;
+}
+
+.fashion3 h1 {
+  color: #567ce4;
+}
+
+.fashion-img {
+  height: 75vh;
+  flex-basis: 30rem;
+}
+
+.fashion-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.fashion-text {
+  flex: 1;
+  position: relative;
+  flex-basis: 25rem;
+}
+
+.fashion-text h1 {
+  font-size: 6rem;
+  padding: 4rem 0rem;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -8,6 +71,10 @@ body {
   font-family: "Montserrat", sans-serif;
   background-color: #17181a;
   overflow-x: hidden;
+}
+
+body.hide {
+  overflow: hidden;
 }
 
 #logo {
@@ -26,6 +93,8 @@ header {
   width: 80%;
   margin: auto;
   padding: 2rem 0rem;
+  z-index: 2;
+  position: relative;
 }
 
 header .burger {
@@ -49,6 +118,7 @@ header .burger .line1, header .burger .line2 {
   justify-content: space-between;
   align-items: center;
   color: white;
+  background: #17181a;
 }
 
 .slide .hero-desc {
@@ -191,5 +261,32 @@ nav.nav-bar .contact p {
   left: 50%;
   font-size: 0.5rem;
   transform: translate(-50%, -50%);
+}
+
+.title {
+  overflow: hidden;
+  position: relative;
+}
+
+.title-swipe {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: absolute;
+  mix-blend-mode: darken;
+  transform: translateY(100%);
+}
+
+.title-swipe.t-swipe1 {
+  background-color: #567ce4;
+}
+
+.title-swipe.t-swipe2 {
+  background-color: #a76ee7;
+}
+
+.title-swipe.t-swipe3 {
+  background-color: #ff8b5d;
 }
 /*# sourceMappingURL=style.css.map */
