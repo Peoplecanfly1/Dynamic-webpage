@@ -5,6 +5,191 @@
 }
 
 body {
-  font-family: 'Abril Fatface', cursive;
+  font-family: "Montserrat", sans-serif;
+  background-color: #17181a;
+  overflow-x: hidden;
+}
+
+#logo {
+  color: white;
+  font-family: "Abril Fatface", cursive;
+}
+
+header {
+  min-height: 10vh;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  width: 80%;
+  margin: auto;
+  padding: 2rem 0rem;
+}
+
+header .burger {
+  cursor: pointer;
+}
+
+header .burger .line1, header .burger .line2 {
+  width: 3rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background: white;
+  pointer-events: none;
+}
+
+.slide {
+  min-height: 100vh;
+  margin: 0 auto 0 auto;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.slide .hero-desc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  flex-basis: 25rem;
+  padding-left: 5rem;
+  position: relative;
+}
+
+.slide .hero-desc h2 {
+  font-family: "Abril Fatface", cursive;
+  font-size: 5rem;
+}
+
+.slide .hero-desc p {
+  padding: 3rem 0rem;
+  font-size: 1.5rem;
+  color: #dfdfdf;
+}
+
+.slide .hero-img {
+  position: relative;
+  flex: 1;
+  flex-basis: 25rem;
+  overflow: hidden;
+}
+
+.slide .hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide .explore {
+  padding: 1rem 2rem;
+  border: none;
+  background: none;
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  align-self: flex-start;
+  border: 1px solid white;
+  cursor: pointer;
+}
+
+.slide .explore-active {
+  cursor: none;
+}
+
+.slide .fashion-span {
+  color: #ff8b5d;
+}
+
+.slide .mountain-span {
+  color: #567ce4;
+}
+
+.slide .hike-span {
+  color: #a76ee7;
+}
+
+.slide .reveal-img, .slide .reveal-text {
+  position: absolute;
+  width: 100%;
+  height: 150%;
+  background: #17181a;
+  left: 0;
+  top: -15%;
+}
+
+nav.nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1;
+  opacity: 1;
+  clip-path: circle(50px at 100% -10%);
+}
+
+nav.nav-bar .nav-links {
+  font-size: 3rem;
+  flex-basis: 30rem;
+}
+
+nav.nav-bar .nav-links h3 {
+  padding: 3rem 0rem;
+}
+
+nav.nav-bar .contact {
+  flex-basis: 30rem;
+}
+
+nav.nav-bar .contact h2 {
+  font-size: 3rem;
+  padding: 2rem 0rem;
+}
+
+nav.nav-bar .contact p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.cursor {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+  transition-property: background, transform;
+  transform-origin: 87% 87%;
+}
+
+.cursor.nav-active {
+  background-color: #567ce4;
+  transform: scale(2);
+}
+
+.cursor.explore-active {
+  transform: scale(2);
+  background: white;
+}
+
+.cursor-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 0.5rem;
+  transform: translate(-50%, -50%);
 }
 /*# sourceMappingURL=style.css.map */
